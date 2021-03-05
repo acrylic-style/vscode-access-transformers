@@ -1,0 +1,34 @@
+{
+    "name": "vscode-access-transformers",
+    "displayName": "Access Transformers (.at) File Support",
+    "description": "fml .at file support for vscode",
+    "author": {
+        "name": "acrylic-style",
+        "url": "https://github.com/acrylic-style"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/acrylic-style"
+    },
+    "publisher": "acrylic-style",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.54.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "access-transformer",
+            "aliases": ["Access Transformers", "access-transformer"],
+            "extensions": [".at"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "access-transformer",
+            "scopeName": "source.at",
+            "path": "./syntaxes/access-transformer.tmLanguage.json"
+        }]
+    }
+}

@@ -1,0 +1,93 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Access Transformers",
+  "patterns": [
+    {
+      "include": "#ctor-class-name"
+    },
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#todo-keyword"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#class-name"
+    },
+    {
+      "include": "#method-sig"
+    },
+    {
+      "include": "#field"
+    },
+    {
+      "include": "#method"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.other.access-transformer",
+          "match": "\\b(public|protected|private|default)\\b"
+        },
+        {
+          "name": "keyword.control.access-transformer",
+          "match": "\\b([+-]f)\\b"
+        }
+      ]
+    },
+    "class-name": {
+      "patterns": [
+        {
+          "name": "entity.name.type",
+          "match": "\\b([A-Z].*|.*[.].*?)(\\s+)\\b"
+        },
+        {
+          "name": "entity.name.type",
+          "match": "\\s+.*[.].*?$"
+        }
+      ]
+    },
+    "ctor-class-name": {
+      "name": "entity.name.type",
+      "match": "\\s+.*(?=[<])"
+    },
+    "field": {
+      "name": "entity.name.function",
+      "match": "\\b[a-zA-Z_$]+$\\b"
+    },
+    "method": {
+      "patterns": [
+        {
+          "name": "entity.name.function",
+          "match": "\\b.*(?=[(])\\b"
+        },
+        {
+          "name": "entity.name.function",
+          "match": "<init>(?=[(])"
+        }
+      ]
+    },
+    "method-sig": {
+      "patterns": [
+        {
+          "name": "keyword.other.access-transformer",
+          "match": "\\(.*\\)"
+        },
+        {
+          "name": "entity.name.type",
+          "match": "[ZBCSIJFDV\\[L].*"
+        }
+      ] 
+    },
+    "comment": {
+      "name": "comment.line",
+      "match": "#.*"
+    }
+  },
+  "scopeName": "source.at"
+}
